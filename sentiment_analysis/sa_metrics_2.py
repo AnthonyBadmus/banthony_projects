@@ -8,9 +8,7 @@ st.set_page_config(layout="wide")
 # Load the dataset
 # df = pd.read_csv('C:/Users/DELL/Documents/github/banthony_projects/sentiment_analysis/tweets_2.csv', encoding="latin1")
 
-
-df = pd.read_csv('tweets_2.csv', encoding="latin1")
-
+df = pd.read_csv('sentiment_analysis/tweets_2.csv', encoding="latin1")
 
 # Convert date column to datetime
 df['date'] = pd.to_datetime(df['date'], errors='coerce')
