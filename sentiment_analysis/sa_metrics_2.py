@@ -65,6 +65,8 @@ if page == "FFCare Tweets Dashboard":
             ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         ).fillna(0)
         st.bar_chart(tweets_by_month)
+        # st.line_chart(tweets_by_month)
+
 
     # b. Tweets by day of the week
     with col6:
