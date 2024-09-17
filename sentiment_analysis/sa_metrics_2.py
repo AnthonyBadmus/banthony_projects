@@ -10,11 +10,11 @@ st.set_page_config(layout="wide")
 # Load the dataset
 # df = pd.read_csv('C:/Users/DELL/Documents/github/banthony_projects/sentiment_analysis/tweets_2.csv', encoding="latin1")
 
-conn = st.connection("gsheets", type=GSheetsConnection)
-df = conn.read(worksheet="tweets")
+# conn = st.connection("gsheets", type=GSheetsConnection)
+# df = conn.read(worksheet="tweets")
 
 
-# df = pd.read_csv('sentiment_analysis/tweets_2.csv', encoding="latin1")
+df = pd.read_csv('sentiment_analysis/tweets_2.csv', encoding="latin1")
 
 
 # Convert date column to datetime
