@@ -115,7 +115,7 @@ elif page == "Analyse a Tweet":
 
     user_tweet = st.text_area("Paste the tweet here:")
 
-    if st.button("Analyze Sentiment"):
+    if st.button("Get Tweet Sentiment"):
         if user_tweet:
             sentiment = TextBlob(user_tweet).sentiment.polarity
             st.write(f"Sentiment: {'Positive' if sentiment > 0 else 'Negative' if sentiment < 0 else 'Neutral'}")
