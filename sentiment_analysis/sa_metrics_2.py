@@ -1,6 +1,8 @@
 import streamlit as st
+from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 from textblob import TextBlob
+import plotly.express as px
 
 # Set the layout to wide
 st.set_page_config(layout="wide")
@@ -8,7 +10,12 @@ st.set_page_config(layout="wide")
 # Load the dataset
 # df = pd.read_csv('C:/Users/DELL/Documents/github/banthony_projects/sentiment_analysis/tweets_2.csv', encoding="latin1")
 
-df = pd.read_csv('sentiment_analysis/tweets_2.csv', encoding="latin1")
+conn = st.connection("gsheets", type=GSheetsConnection)
+df = conn.read(worksheet="tweets")
+
+
+# df = pd.read_csv('sentiment_analysis/tweets_2.csv', encoding="latin1")
+
 
 # Convert date column to datetime
 df['date'] = pd.to_datetime(df['date'], errors='coerce')
@@ -46,9 +53,15 @@ if page == "FFCare Tweets Dashboard":
 
     # c. Source with the highest number of tweets
     with col3:
+        # st.subheader("Top Sources by Tweet Count")
+        # top_sources = df['source'].value_counts().head(10)
+        # st.bar_chart(top_sources)
+
         st.subheader("Top Sources by Tweet Count")
         top_sources = df['source'].value_counts().head(10)
-        st.bar_chart(top_sources)
+        fig = px.pie(top_sources, values=top_sources.values, names=top_sources.index)
+        st.plotly_chart(fig)
+
 
     # d. Tweets with the highest number of likes and retweets
     with col4:
@@ -66,8 +79,8 @@ if page == "FFCare Tweets Dashboard":
         tweets_by_month = df['month'].value_counts().reindex(
             ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         ).fillna(0)
-        st.bar_chart(tweets_by_month)
-        # st.line_chart(tweets_by_month)
+        # st.bar_chart(tweets_by_month)
+        st.line_chart(tweets_by_month)
 
 
     # b. Tweets by day of the week
