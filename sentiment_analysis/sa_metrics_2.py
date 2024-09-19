@@ -26,7 +26,6 @@ if page == "FFCare Tweets Dashboard":
     st.title("FFCare Social Media Engagement Dashboard")
 
     # Scorecard Metrics
-    st.header("Scorecard Metrics")
     col1, col2, col3, col4 = st.columns(4)
 
     # Total Number of Tweets
@@ -52,7 +51,6 @@ if page == "FFCare Tweets Dashboard":
         st.metric("Average Sentiment", avg_sentiment_text, f"{average_sentiment:.2f}")
 
     # 1. Track Brand Mentions and Identify Influencers
-    st.header("Track Brand Mentions and Identify Influencers")
 
     col1, col2 = st.columns(2)
 
@@ -102,7 +100,6 @@ if page == "FFCare Tweets Dashboard":
         st.bar_chart(tweets_by_day)
 
     # 3. Measure Opinions
-    st.header("Measure Opinions")
 
     # a. Overall sentiment of all tweets
     st.subheader("Overall Sentiment of Tweets")
