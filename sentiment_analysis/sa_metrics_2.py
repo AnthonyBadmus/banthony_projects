@@ -23,7 +23,7 @@ page = st.sidebar.radio("Go to", ["FFCare Tweets Dashboard", "Analyse a Tweet"])
 
 # Dashboard Page
 if page == "FFCare Tweets Dashboard":
-    st.title("Twitter Analytics Dashboard")
+    st.title("FFCare Social Media Engagement Dashboard")
 
     # Scorecard Metrics
     st.header("Scorecard Metrics")
