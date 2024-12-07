@@ -1,4 +1,7 @@
-This Jupyter Notebook analyzes a dataset of tweets about a Fast Moving Consumer Brand (FFCare). The goal is to assess brand engagement and sentiment.
+
+Sentiment analysis is a natural language processing (NLP) technique used to determine the sentiment of textual data (Positive, Negative, or Neutral). It is used to assess brand popularity, customer feedback, customer needs, marketing campaign success rates, and competitor brand monitoring, among other things.
+
+This study aims to assess brand engagement in terms of the number of tweets, likes, retweets, and sentiment of tweets about Fast Moving Consumer Brand (FFCare)
 
 # Objectives
 
